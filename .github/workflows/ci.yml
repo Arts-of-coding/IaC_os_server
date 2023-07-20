@@ -56,7 +56,7 @@ jobs:
       run: terraform init
         
     - name: Run main_tf terraform
-      run: terraform apply
+      run: terraform apply -auto-approve
         
 
 
