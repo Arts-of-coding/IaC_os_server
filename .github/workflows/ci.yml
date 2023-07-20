@@ -67,8 +67,13 @@ jobs:
     - name: Run main_tf terraform
       run: terraform apply -auto-approve
 
+    - name: Conda add new env path
+      run: conda config --append envs_dirs /usr/share/miniconda3/envs/test/envs
+
     - name: Conda show all envs
       run: conda info --envs
+
+
 
     # Test import of packages from environments
     
