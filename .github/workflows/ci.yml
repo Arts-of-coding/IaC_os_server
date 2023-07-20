@@ -51,8 +51,11 @@ jobs:
         use-only-tar-bz2: true  # IMPORTANT: This needs to be set for caching to work properly!
         auto-update-conda: true
         auto-activate-base: true
-        
-    - name: Init terraform
+
+    - name: Init conda
+      run: conda init
+      
+    - name: Install ansible
       run: terraform init
         
     - name: Run main_tf terraform
