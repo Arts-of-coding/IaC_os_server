@@ -1,9 +1,9 @@
 provider "null" {}
 
 resource "null_resource" "create_conda_environment" {
-  provisioner "local-exec" {
-    command = "create --name my_environment python=3.9 -y"
-    interpreter = ["conda"]
+  provisioner "remote-exec" {
+    command = "--name my_environment python=3.9 -y"
+    interpreter = ["conda", "create","-Command"]
   }
 }
 
