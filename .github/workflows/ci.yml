@@ -55,11 +55,19 @@ jobs:
     - name: Init conda
       run: conda init
       
+    - name: Install mamba
+      run: conda install -c conda-forge mamba
+      
     - name: Init terraform
       run: terraform init
         
     - name: Run main_tf terraform
       run: terraform apply -auto-approve
         
-
+    # Test import of packages from environments
+    
+    - name: test R_py_39
+      run: |
+        conda activate R_py_39
+        python3 test_yml/test_jupyter.py
 

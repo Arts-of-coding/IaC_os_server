@@ -1,4 +1,4 @@
-name: py_R_39
+name: R_py_39
 channels:
   - conda-forge
 dependencies:
