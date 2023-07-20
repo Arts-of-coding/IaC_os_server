@@ -1,0 +1,29 @@
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main and develop" branch
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main", "develop" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  ci_minimal:
+    # Set up operating system
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        shell: bash -l {0}
+        
+    steps:
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.1.9
+        terraform_wrapper: false
+
