@@ -58,6 +58,9 @@ jobs:
     - name: Install mamba
       run: conda install -c conda-forge mamba
       
+    - name: remove conda cache
+      run: rm -rf /home/runner/conda_pkgs_dir/cache
+      
     - name: Init terraform
       run: terraform init
         
