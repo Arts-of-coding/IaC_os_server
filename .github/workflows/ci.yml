@@ -55,7 +55,7 @@ jobs:
     - name: Init conda
       run: conda init
       
-    - name: Install ansible
+    - name: Init terraform
       run: terraform init
         
     - name: Run main_tf terraform

@@ -1,0 +1,35 @@
+name: py_R_39
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - matplotlib<3.7
+  - pandas
+  - scipy
+  - numpy
+  - scanpy
+  - scrublet
+  - anansescanpy
+  - pip
+  - leidenalg
+  - r-base=4.1
+  - r-tidyverse
+  - r-reticulate
+  - bioconductor-singlecellexperiment
+  - r-glue
+  - r-clustree
+  - pip:
+    - scikit-learn
+    - scikit-misc
+    - invoke
+    - pybiomart
+
+
+
+# added these packages afterwards:
+#pip install -U scikit-learn
+#pip install --user scikit-misc
+#pip install snapatac2
+#pip install leidenalg
+#pip install "invoke ==1.2.0"
+#pip install pybiomart
