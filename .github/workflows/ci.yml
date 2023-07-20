@@ -52,11 +52,11 @@ jobs:
         auto-update-conda: true
         auto-activate-base: true
         
-      - name: Init terraform
-        run: terraform init
+    - name: Init terraform
+      run: terraform init
         
-      - name: Run main_tf terraform
-        run: terraform apply
+    - name: Run main_tf terraform
+      run: terraform apply
         
 
 
