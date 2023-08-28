@@ -9,7 +9,6 @@ dependencies:
   - numpy
   - scanpy
   - scrublet
-  - anansescanpy
   - pip
   - leidenalg
   - r-base=4.1

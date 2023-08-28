@@ -73,13 +73,17 @@ jobs:
     - name: Conda show all envs
       run: conda info --envs
 
-
-
     # Test import of packages from environments
     
     - name: test R_py_39
       run: |
         conda activate R_py_39
         python3 test_yml/test_jupyter.py
+        conda deactivate
+        
+    - name: test R_SeuratDisk
+      run: |
+        conda activate R_seuratdisk
+        Rscript test_yml/test_seuratdisk.R
         conda deactivate
 
