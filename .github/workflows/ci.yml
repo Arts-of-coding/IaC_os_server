@@ -57,9 +57,12 @@ jobs:
       
     - name: Install mamba
       run: conda install -c conda-forge mamba
+
+    - name: Show current location
+      run: ls -a
       
     - name: Set path to conda folder
-      run: cd IaC_os_server/conda/
+      run: conda/
 
     - name: Show current location
       run: ls -a
