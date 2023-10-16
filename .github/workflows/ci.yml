@@ -59,7 +59,7 @@ jobs:
       run: conda install -c conda-forge mamba
 
     - name: Show current location
-      run: ls -a
+      run: pwd
       
     - name: Set path to conda folder
       run: cd ./conda
@@ -68,7 +68,7 @@ jobs:
       run: ls -a
 
     - name: Show conda current location
-      run: ls /conda
+      run: ls -a | grep conda
       
     - name: Init terraform
       run: terraform init
