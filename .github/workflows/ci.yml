@@ -62,7 +62,7 @@ jobs:
       run: ls -a
       
     - name: Set path to conda folder
-      run: conda/
+      run: cd conda/
 
     - name: Show current location
       run: ls -a
