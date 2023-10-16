@@ -60,24 +60,17 @@ jobs:
 
     - name: Show current location
       run: pwd
-      
-    - name: Set path to conda folder
-      run: cd /home/runner/work/IaC_os_server/IaC_os_server/conda
 
-    - name: Show current location
-      run: pwd
-
-    - name: Show conda current location
-      run: ls -a
-      
-    - name: Init terraform
-      run: terraform init
-      
     - name: remove conda cache
       run: rm -rf /home/runner/conda_pkgs_dir/cache/*
       
+    - name: Init terraform
+      run: terraform init
+      working-directory: conda/
+      
     - name: Run main_tf terraform
       run: terraform apply -auto-approve
+      working-directory: conda/
 
     - name: Conda add new env path
       run: conda config --append envs_dirs /usr/share/miniconda3/envs/test/envs
@@ -90,12 +83,12 @@ jobs:
     - name: test R_py_39
       run: |
         conda activate R_py_39
-        python3 test_yml/test_jupyter.py
+        python3 conda/test_yml/test_jupyter.py
         conda deactivate
         
     - name: test R_SeuratDisk
       run: |
         conda activate R_seuratdisk
-        Rscript test_yml/test_seuratdisk.R
+        Rscript conda/test_yml/test_seuratdisk.R
         conda deactivate
 
