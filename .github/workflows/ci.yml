@@ -62,13 +62,13 @@ jobs:
       run: pwd
       
     - name: Set path to conda folder
-      run: cd ./conda
+      run: cd /home/runner/work/IaC_os_server/IaC_os_server/conda
 
     - name: Show current location
-      run: ls -a
+      run: pwd
 
     - name: Show conda current location
-      run: ls -a | grep conda
+      run: ls -a
       
     - name: Init terraform
       run: terraform init
