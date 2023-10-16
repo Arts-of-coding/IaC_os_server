@@ -62,10 +62,13 @@ jobs:
       run: ls -a
       
     - name: Set path to conda folder
-      run: cd /home/runner/work/IaC_os_server/IaC_os_server/conda/
+      run: cd ./conda
 
     - name: Show current location
       run: ls -a
+
+    - name: Show conda current location
+      run: ls /conda
       
     - name: Init terraform
       run: terraform init
