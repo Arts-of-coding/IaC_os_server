@@ -62,7 +62,7 @@ jobs:
       run: ls -a
       
     - name: Set path to conda folder
-      run: cd ~/conda/
+      run: cd /home/runner/work/IaC_os_server/IaC_os_server/conda/
 
     - name: Show current location
       run: ls -a
